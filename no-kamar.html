@@ -53,14 +53,14 @@
     let tableRows ="";
     table.innerHTML="";
 
-    axios.get('https://anthonygunardi.com:5001/api/v1/users/1')
+    axios.get('https://anthonygunardi.com:5001/api/v1/roomoccupants/1')
     .then(result => {
       console.log(result)
       let resultData = result.data;
       resultData.forEach(ele=>{
         tableRows +='<tr>';
         tableRows +=
-          '<td>' + ele.nama+'</td>' +'<td>'+ ele.room + '</td>'
+          '<td>' + ele.nama+'</td>' +'<td>'+ ele.no_kamar + '</td>'
         tableRows +='</tr>'
       })
       table.innerHTML += tableRows;
